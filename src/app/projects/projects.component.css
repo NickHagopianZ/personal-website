@@ -1,0 +1,13 @@
+.textbox {
+  /* width: 100%; */
+  background-color: #E9967A;
+  font-size: 20px;
+  box-shadow: inset 0 0 10px #000000;
+  padding: 15px;
+  /* margin-right: 200px; */
+}
+
+div {
+  /* background-color: black; */
+  padding-right: 10px;
+}

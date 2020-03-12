@@ -1,0 +1,138 @@
+.sidebarButton:hover {
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 0px 2px inset grey;
+
+}
+
+.headerClass a:hover {
+  background-color: white;
+  box-shadow: 0px 0px 2px inset grey;
+
+}
+
+.sidebarButton:active {
+  color: lightgrey;
+  box-shadow: 0px 0px 5px inset grey;
+
+}
+
+.headerClass a:active {
+  color: lightgrey;
+  box-shadow: 0px 0px 5px inset grey;
+}
+
+.headerClass a {
+  padding-top: 9px;
+  padding-bottom: 5.5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.sidebarButton {
+  /* padding-right: 8px; */
+  padding: 5px 10px 5px 10px;
+  /* padding: 5px; */
+  z-index: 2;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  color: black;
+}
+
+
+.cover {
+  min-height: calc(100vh - 40px);
+  margin-top: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #df633a;
+
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* html { */
+  /* overflow-x: hidden; */
+/* } */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.sidebar a {
+  width: 100%;
+}
+
+.sidebar li {
+  color: black;
+  margin: 0;
+  padding-left: 20px;
+  padding-top: 30px;
+  height: 80px;
+  border-top: 1px solid black;
+
+}
+
+header {
+  padding-top: 9px;
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  /* padding-left: 90px; */
+  z-index: 2;
+  font-weight: bold;
+  font-size: 25px;
+  height: 33px;
+  box-shadow: 0 0 10px #000000;
+  background-color: white;
+  width: 100%;
+}
+
+.sidebar li:hover {
+  background-color: #555;
+  transition: .5s;
+  color: white;
+}
+
+.sidebar ul {
+
+  font-size: 40px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebar {
+
+  box-shadow: inset 0 0 10px #000000;
+  width: 0px;
+  z-index: 1;
+  padding-top: 40px;
+  margin-top: 0;
+  position: fixed;
+  width: 350px;
+  /* padding-right: 0px; */
+  top: 0;
+  left: -360px;
+  height: 100%;
+  background-color: #E9967A;
+
+}
+
+
+@media screen and (max-width: 700px) {
+  header{
+    padding-left: 60px;
+    padding-top: 10px;
+    font-size: 30px;
+  }
+}

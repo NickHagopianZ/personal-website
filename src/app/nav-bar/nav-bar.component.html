@@ -1,0 +1,26 @@
+<nav>
+
+<span [@openClose]="openSideBar ? 'open' : 'closed'" class = "sidebar">
+  <ul>
+    <a href="/home"><li> Home</li></a>
+    <a href="/about"><li>About</li></a>
+    <a href="/resume"><li>Resume</li></a>
+    <a href="/projects"><li>Projects</li></a>
+    <a href="/contact"><li>Contact Me</li></a>
+  </ul>
+</span>
+</nav>
+
+<header class = "headerClass">
+  <a href="/home">Nicholas Hagopian-Zirkel</a>
+</header>
+
+<span class="sidebarButton" (click)="openSideBar = !openSideBar">
+<i class="fa fa-bars fa-2x"></i>
+</span>
+
+<div class = "cover" [@openCloseMain]="openSideBar ? 'open' : 'closed'" (click)="openSideBar = false">
+<router-outlet></router-outlet>
+
+</div>
+<!-- </body> -->
