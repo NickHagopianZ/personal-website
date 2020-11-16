@@ -5,6 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  title = 'personalWebsite';
+  title = 'Nick Hagopian-Zirkel';
+  pageHeight:number = 712;
+  scrollLocation:number = 0;
+  adjustScrollLocation():void {
+    this.pageHeight = document.getElementById("page-1").offsetHeight
+    this.scrollLocation = document.getElementById("scroll-container").scrollTop;
+  }
 }

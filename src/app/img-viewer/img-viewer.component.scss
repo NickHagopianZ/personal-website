@@ -1,0 +1,121 @@
+@import 'src/styles';
+
+.container{
+    overflow-y: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    max-width: 85%;
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    max-height: 95%;
+    // opacity: 1;
+    // background-color: rgb(255, 255, 255);
+    z-index: 2;
+    box-shadow: #000 0 2px 18px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navImages {
+    padding: 0px;
+    position: sticky;
+    bottom: 0px;
+    margin: 0px;
+    width: 100%;
+    background-color: rgba($secondary, .7);
+height: 70px
+}
+
+img {
+    max-width: 100%;
+    margin: 0px 0px -4px 0px;
+    // margin-bottom: -4px;
+}
+
+.button1 {
+    text-align: right;
+    position: sticky;
+    bottom: 30px;
+    margin: 30px;
+}
+
+.last-button {
+    position: absolute;
+    top: 45%;
+    left: 10px;
+    transform: translate(0px, -50%);
+}
+
+.page-num {
+    font-weight: 400;
+    font-size: 25px;
+    position: absolute;
+    top: 49%;
+    left: 90px;
+    transform: translate(0px, -50%);
+
+}
+
+.gray-out {
+    background-color: blue;
+    filter: grayscale(1);
+}
+
+.next-button {
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    transform: translate(0px, -50%);
+}
+
+
+.navImages .download-button {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.container img {
+    width: 100%;
+}
+
+
+/* width */
+.container::-webkit-scrollbar {
+    width: 7px;
+}
+  
+/* Track */
+.container::-webkit-scrollbar-track {
+    background: #cecece88; 
+}
+   
+/* Handle */
+.container::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+  /* Handle on hover */
+  .container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.global-button svg {
+    transform: translateY(5px);
+    fill: white;
+    
+    transition: all 0.3s;
+}
+
+@media only screen and (min-width: 601px) {
+    .global-button a:hover svg{
+        fill: $text;
+    }
+  }
+  

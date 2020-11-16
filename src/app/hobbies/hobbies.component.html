@@ -1,0 +1,157 @@
+<div class="cover">
+  <div class="slider">
+    <section
+      id="scroll1"
+      onclick="document.getElementById('scroll1').scrollIntoView(true);"
+    >
+      <div class="flex-container">
+        <div class="container-1">
+          <h1 class="header-text">
+            Frisbee
+          </h1>
+          <p>
+            Nick started playing frisbee for Wooster Men's Ultimate during his
+            sophomore year of college. The team ("Ramjam") practices 3-5 times a week
+            year-round. They also compete in weekend tournaments, culminating in 
+            a sectional tournament which allows for advancement to regionals and then
+            nationals.  
+          </p>
+          <p>
+            During his senior year, Nick acted as treasurer for his
+            college team. His role was to coordinate with administration on
+            behalf of Ramjam. In this role he supported the largest non-Greek
+            organization on campus. He also organized travel, housing and
+            funding for over 50 students.
+          </p>
+          <p>
+            Nick continues to play when possible, often joining summer league or 
+            reuniting with college friends for tournaments. 
+          </p>
+        </div>
+          <div class="container-2">
+            <li>
+              <img src="/assets/fris3.jpg" alt="fris1" (click)="displayPicture('fris3.jpg', 0, 'frisbee')"/>
+            </li>
+            <li>
+              <img
+                src="/assets/fris1.jpeg"
+                alt="fris3"
+                (click)="displayPicture('fris1.jpeg', 0, 'frisbee', 1)"
+              />
+            </li>
+            <li>
+              <img src="/assets/fris2.jpg" alt="fris2" (click)="displayPicture('fris2.jpg', 0, 'frisbee', 2)"/>
+            </li>
+          </div>
+      </div>
+    </section>
+    <section
+      id="scroll2"
+      onclick="document.getElementById('scroll2').scrollIntoView(true);"
+    >
+    <div class="flex-container">
+      <div class="container-1">
+        <h1 class="header-text">
+          Volunteer Work
+        </h1>
+        <p>
+          During his time at the College of Wooster Nick volunteered weekly
+          as part of the Wooster Volunteer Network while still completing a full
+          course load. The organizations he worked with were the Boys & Girls
+          Club of America and the Nick Amster Workshop.
+        </p>
+        <blockquote cite="http://nickamster.com/">
+          The Boys & Girls Clubs of America is a national organization of local
+          chapters which provide voluntary after-school programs for young people. 
+          ... [Our mission is] to enable all young people, especially those who need us 
+          most, to reach their full potential as productive, caring, responsible 
+          citizens.
+        </blockquote>
+        <p>
+          While volunteering at the Boys & Girls Club, Nick helped students complete and 
+          understand their homework, led them in activities and acted as role model
+          for good-behavior and inclusiveness.
+        </p>
+        <blockquote cite="https://www.bgca.org/about-us/our-mission-story">
+          The mission of Nick Amster, Inc. is to ensure that every adult with a
+          developmental disability or special health care need thrives in the
+          community of their choice. As the premier provider of adult services,
+          our compassionate and experienced staff collaborate with families,
+          caregivers, and local partners to provide opportunities for
+          individuals to live, learn, work, and achieve their highest level of
+          independence.
+        </blockquote>
+        <p>
+          During his time with the Nick Amster Workshop, Nick participated in 
+          coordinating and participating in events to provide individuals social 
+          and recreation opportunities. 
+        </p>
+      </div>
+        <div class="container-2">
+          <li>
+            <img src="/assets/nickamstercrop.jpg" alt="NickAmster" (click)="displayPicture('nickamstercrop.jpg', 0)"/>
+          </li>
+          <li>
+            <img src="/assets/BGC.jpg" alt="BGC" (click)="displayPicture('BGC.jpg', 0)"/>
+          </li>
+        </div>
+    </div>
+    </section>
+    <section
+      id="scroll3"
+      onclick="document.getElementById('scroll3').scrollIntoView(true);"
+    >
+    <div class="flex-container">
+      <div class="container-1">
+        <h1 class="header-text">
+          Travel
+        </h1>
+        <p>
+          When possible, Nick enjoys seeing as much of the world as possible. He spent four months from November 2018 to February 2019 participating in Birthright Armenia. This program involved living in Armenia with a local family, volunteering 30+ hours a week, weekend trips and biweekly language classes.
+        </p>
+      </div>
+        <div class="container-3">
+          <li>
+            <img src="/assets/nish.jpg" alt="meghri" (click)="displayPicture('nish.jpg', 0)"/>
+          </li>
+          <li>
+            <img src="/assets/virgin-islands.jpeg" alt="virgin islands" (click)="displayPicture('virgin-islands.jpeg', 0)"/>
+          </li>
+          <li>
+            <img src="/assets/bedouin.jpeg" alt="bedouin" (click)="displayPicture('bedouin.jpeg', 0)"/>
+          </li>
+          <li>
+            <img src="/assets/ghost.jpeg" alt="gHost" (click)="displayPicture('ghost.jpeg', 0)"/>
+          </li>
+          <li>
+            <img src="/assets/babajanian.jpeg" alt="babajanian" (click)="displayPicture('babajanian.jpeg', 0)"/>
+          </li>
+          <li>
+            <img src="/assets/ben.jpeg" alt="big ben" (click)="displayPicture('ben.jpeg', 0)"/>
+          </li>
+        </div>
+        <div class="pad-bottom"></div>
+    </div>
+    </section>
+    <!-- <section
+      id="scroll4"
+      onclick="document.getElementById('scroll4').scrollIntoView(true);"
+    >
+      board games.
+    </section> -->
+    <div class="last-spacing"></div>
+  </div>
+
+  <div id="shadow-right"></div>
+
+  <div id="shadow-left"></div>
+</div>
+
+<div *ngIf="imgBoolean" class="img-cover" (click)="imgBoolean = false"></div>
+
+<app-img-viewer
+  *ngIf="imgBoolean"
+  [download]="false"
+  [currentImage]="initialPicture"
+  [img]="imgString"
+></app-img-viewer>

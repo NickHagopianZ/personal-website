@@ -1,0 +1,86 @@
+@import 'src/styles';
+
+
+section {
+    width: 100%;
+
+}
+
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+#scroll-container section {
+    // background-color: rgba($primary2, 0.2);
+    scroll-snap-align: start;
+    height: 100%;
+    word-wrap: break-word;
+    overflow-x: clip;
+}
+
+#page-1{
+    background-image: linear-gradient(rgba(#bfd1cb, .3), rgba(rgb(152, 226, 222), .3));
+}
+
+#page-2{
+    background-image: linear-gradient(rgba(rgb(152, 226, 222), .3), rgba(#a9b8ff, .3));
+}
+
+#page-3{
+    background-image: linear-gradient(rgba(#a9b8ff, .3), rgba(#2a79ce, .3));
+}
+
+#page-4{
+    background-image: linear-gradient(rgba(#2a79ce, .3), rgba(#4d4669, .5));
+}
+
+
+#cover {
+    background-image: url("../assets/lightpattern.png");
+    width: calc(100vw);
+    // width: 100%;
+    overflow-x: hidden;
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+
+
+
+#scroll-container {
+    scroll-snap-type: y mandatory;
+
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    // padding: 100px;
+    // margin: 100px;
+}
+
+
+@media only screen and (min-width: 601px) {
+    #scroll-container {
+        // height: 100%;
+        padding-left: 5em;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #scroll-container {
+        // scroll-padding-top: 5rem;
+        // scroll-snap-type: y proximity;
+        // padding-bottom: 200px;
+    }
+}

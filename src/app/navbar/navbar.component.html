@@ -1,0 +1,297 @@
+<!-- sssssssssssssssssss{{initialIgnores}} -->
+<nav class="navbar">
+  <ul class="nav-container" (mouseleave)="hoverGroup(-1)">
+    <div [ngClass]="showIcons ? 'showIcons' : 'hideIcons'" class="moreOptions">
+      <li class="nav-item" *ngIf="showIcons" id="githubIcon">
+        <a
+          href="https://github.com/NickHagopianZ/Senior-Project"
+          class="nav-link"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="42"
+            height="42"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z"
+            />
+          </svg>
+        </a>
+      </li>
+
+      <li class="nav-item" *ngIf="showIcons" id="linkedinIcon">
+        <a
+          href="https://linkedin.com/in/nicholashagopianzirkel-8671b216b"
+          class="nav-link"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="42"
+            height="42"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+            />
+          </svg>
+        </a>
+      </li>
+
+      <li
+        class="nav-item"
+        *ngIf="showIcons"
+        id="contactIcon"
+        (click)="contactMe = true"
+      >
+        <span class="nav-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="42"
+            height="42"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z"
+            />
+          </svg>
+        </span>
+      </li>
+
+      <span (click)="additionalIcons()" *ngIf="!showIcons" id="showIcon">
+        <svg
+          width="24"
+          height="24"
+          xmlns="http://www.w3.org/2000/svg"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+        >
+          <path
+            d="M24 18v1h-24v-1h24zm0-6v1h-24v-1h24zm0-6v1h-24v-1h24z"
+            fill="#1040e2"
+          />
+          <path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z" />
+        </svg>
+      </span>
+
+      <li class="nav-item" *ngIf="showIcons" (click)="additionalIcons()">
+        <a href="#" class="nav-link">
+          <svg
+            width="24"
+            height="24"
+            xmlns="http://www.w3.org/2000/svg"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+          >
+            <path
+              d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"
+            />
+          </svg>
+        </a>
+      </li>
+    </div>
+
+    <li
+      class="nav-item"
+      [ngClass]="{
+        hoverGroup: scrolling || (highlightGroup > 0 && highlightGroup <= 4)
+      }"
+      (mouseenter)="hoverGroup(1)"
+    >
+      <a
+        onclick="document.getElementById('page-1').scrollIntoView(true);"
+        [ngClass]="{ inView: scrollLocation < pageHeight / 2 }"
+        class="nav-link"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="42"
+          height="42"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 9.185l7 6.514v6.301h-3v-5h-8v5h-3v-6.301l7-6.514zm0-2.732l-9 8.375v9.172h7v-5h4v5h7v-9.172l-9-8.375zm12 5.695l-12-11.148-12 11.133 1.361 1.465 10.639-9.868 10.639 9.883 1.361-1.465z"
+          />
+        </svg>
+        <span class="link-text">Home</span>
+      </a>
+    </li>
+
+    <li
+      class="nav-item"
+      [ngClass]="{
+        hoverGroup: scrolling || (highlightGroup > 0 && highlightGroup <= 4)
+      }"
+      (mouseenter)="hoverGroup(2)"
+    >
+      <a
+        onclick="document.getElementById('page-2').scrollIntoView(true);"
+        [ngClass]="{
+          inView:
+            pageHeight / 2 < scrollLocation &&
+            scrollLocation < (3 * pageHeight) / 2
+        }"
+        class="nav-link"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="42"
+          height="42"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 2v20h-20v-20h20zm2-2h-24v24h24v-24zm-4 7h-8v1h8v-1zm0 5h-8v1h8v-1zm0 5h-8v1h8v-1zm-10.516-11.304l-.71-.696-2.553 2.607-1.539-1.452-.698.71 2.25 2.135 3.25-3.304zm0 5l-.71-.696-2.552 2.607-1.539-1.452-.698.709 2.249 2.136 3.25-3.304zm0 5l-.71-.696-2.552 2.607-1.539-1.452-.698.709 2.249 2.136 3.25-3.304z"
+          />
+        </svg>
+        <span class="link-text">Qualifications</span>
+      </a>
+    </li>
+
+    <li
+      class="nav-item"
+      [ngClass]="{
+        hoverGroup: scrolling || (highlightGroup > 0 && highlightGroup <= 4)
+      }"
+      (mouseenter)="hoverGroup(3)"
+    >
+      <a
+        onclick="document.getElementById('page-3').scrollIntoView(true);"
+        [ngClass]="{
+          inView:
+            (3 * pageHeight) / 2 < scrollLocation &&
+            scrollLocation < (5 * pageHeight) / 2
+        }"
+        class="nav-link"
+      >
+        <svg
+          width="42"
+          height="42"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M17.007 17.996c1.657 0 3.001 1.346 3.001 3.002 0 1.656-1.344 3.002-3.001 3.002h-14.005c-1.657 0-3.002-1.346-3.002-3.002 0-1.65 1.335-2.99 2.982-3.002h.02-1.51c-.808 0-1.492-.572-1.492-1.434v-6.062c0-.817.694-1.509 1.515-1.509h3.487v-2.408c0-.863.694-1.594 1.517-1.594h4.038c.888-.891 4.138-4.331 4.138-4.331.404-.428.959-.658 1.498-.658.295 0 .586.069.847.214 1.102.61 6.207 3.574 6.207 3.574.753.438.753 1.144.753 1.443 0 .201 0 .205-.728 3.672.223.525.725 1.425.725 2.457 0 2.303-2.303 3.19-3.722 2.87-.724-.163-1.688-.386-2.46-.566l.569 2.065c.358 1.316-.513 2.267-1.555 2.267h.178zm0 4.003h.007c.549-.004.994-.45.994-1.001 0-.552-.449-1-1.001-1h-14.005c-.553 0-1.001.448-1.001 1 0 .553.448 1.001 1.001 1.001h14.005zm-12.255-1.751c-.414 0-.75.336-.75.75s.336.751.75.751.751-.337.751-.751-.337-.75-.751-.75zm7.003 0c-.415 0-.75.336-.75.75s.335.751.75.751c.414 0 .75-.337.75-.751s-.336-.75-.75-.75zm-3.501 0c-.414 0-.751.336-.751.75s.337.751.751.751.75-.337.75-.751-.336-.75-.75-.75zm7.002 0c-.414 0-.75.336-.75.75s.336.751.75.751c.415 0 .751-.337.751-.751s-.336-.75-.751-.75zm-13.255-9.255v5.002h14.376l-2.05-7.465c-.055-.201-.047-.414.026-.61l1.198-3.267c.253-.686.965-.733 1.335-.574l3.052 1.313c.396.17.639.577.601 1.007l-.201 2.272c-.015.171-.074.335-.171.476l-1.774 2.597c.745.173 1.64.381 2.323.534l.205.022c.023 0 1.471-.037.957-1.559-.304-.881-.743-1.403-.626-1.955.403-1.923.628-2.995.713-3.427 0 0-4.678-2.718-5.808-3.346 0 0-3.665 3.89-4.489 4.693-.186.183-.437.284-.699.284h-3.966v3.002c0 .554-.449 1.001-1 1.001h-4.002zm1.001 4.002h4.001v-1.001h-4.001v1.001zm0-2.001h4.001v-1h-4.001v1zm11.531 0h-6.529v-5.003h5.195l1.334 5.003zm-4.529-3.002v1.001h1.925l-.267-1.001h-1.658zm6.337-1.684l.567 2.061 1.461-2.136.114-1.289-1.417-.61-.725 1.974z"
+          />
+        </svg>
+        <span class="link-text">Projects</span>
+      </a>
+    </li>
+
+    <li
+      class="nav-item"
+      [ngClass]="{
+        hoverGroup: scrolling || (highlightGroup > 0 && highlightGroup <= 4)
+      }"
+      (mouseenter)="hoverGroup(4)"
+      (mouseleave)="hoverGroup(-1)"
+    >
+      <a
+        onclick="document.getElementById('page-4').scrollIntoView(true);"
+        [ngClass]="{ inView: (5 * pageHeight) / 2 < scrollLocation }"
+        class="nav-link"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="42"
+          height="42"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0c2.799 1.2 8.683.955 8.307 6.371l-2.143 2.186c-5.338.093-5.239-5.605-6.164-8.557zm10.884 15.402c2.708 2.048 11.824 8.451 11.824 8.451.754.513 1.662-.417 1.136-1.162 0 0-6.607-8.964-8.719-11.619-1.668-2.101-2.502-2.175-5.46-3.046l-1.953 1.997c.936 2.931 1.033 3.76 3.172 5.379zm-4.877 3.332l2.62-2.626c-.26-.244-.489-.485-.69-.724l-2.637 2.643.707.707zm8.244-11.162l4.804-4.814 2.154 2.155-4.696 4.706c.438.525.813 1.021 1.246 1.584l6.241-6.253-4.949-4.95-6.721 6.733c.705.229 1.328.483 1.921.839zm4.837-3.366l-3.972 3.981c.24.199.484.423.732.681l3.946-3.956-.706-.706zm-9.701 12.554l-3.6 3.607-2.979.825.824-2.979 3.677-3.685c-.356-.583-.617-1.203-.859-1.904l-4.626 4.635-1.824 6.741 6.773-1.791 4.227-4.234c-1-.728-1.03-.749-1.613-1.215z"
+          />
+        </svg>
+        <span class="link-text">Activities</span>
+      </a>
+    </li>
+    <!-- <li class = "nav-sub-container"> -->
+    <li
+      class="nav-item"
+      [ngClass]="{ hoverGroup: highlightGroup > 4 && highlightGroup <= 7 }"
+      id="githubIcon"
+      (mouseenter)="hoverGroup(5)"
+      (mouseleave)="hoverGroup(-1)"
+    >
+      <a
+        href="https://github.com/NickHagopianZ/Senior-Project"
+        class="nav-link"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="42"
+          height="42"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z"
+          />
+        </svg>
+        <span class="link-text">GitHub</span>
+      </a>
+    </li>
+
+    <li
+      class="nav-item"
+      [ngClass]="{ hoverGroup: highlightGroup > 4 && highlightGroup <= 7 }"
+      id="linkedinIcon"
+      (mouseenter)="hoverGroup(6)"
+    >
+      <a
+        href="https://linkedin.com/in/nicholashagopianzirkel-8671b216b"
+        class="nav-link"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="42"
+          height="42"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+          />
+        </svg>
+        <span class="link-text">Linkedin</span>
+      </a>
+    </li>
+
+    <li
+      class="nav-item"
+      [ngClass]="{ hoverGroup: highlightGroup > 4 && highlightGroup <= 7 }"
+      id="contactIcon"
+      (click)="contactMe = true"
+      (mouseenter)="hoverGroup(7)"
+    >
+      <span class="nav-link">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="42"
+          height="42"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z"
+          />
+        </svg>
+        <span class="link-text">Contact Me</span>
+      </span>
+    </li>
+    <!-- </li> -->
+  </ul>
+</nav>
+
+<div *ngIf="contactMe" (click)="contactMe = false" class="contactCover"></div>
+<div *ngIf="contactMe" class="contactForm">
+  <span id="close" (click)="contactMe = false">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="red"
+    >
+      <path
+        d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
+      />
+    </svg>
+  </span>
+  <app-contact-me></app-contact-me>
+</div>

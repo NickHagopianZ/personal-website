@@ -1,0 +1,91 @@
+<div class="cover">
+  <article class="main-display"
+  [ngClass]="{ 'tsp-class' : 1 === choice }"
+  >
+    <h1>{{ title[choice] }}</h1>
+    <div class="text">
+      <div class= "flex-reverse">
+      <div class="images">
+        <span *ngIf="choice === 0" class="np">
+          <img src="/assets/nphard.png" alt="Nurse Scheduling Problem" />
+        </span>
+        <span *ngIf="choice === 1" class="tsp" (click)="imgBoolean = true; imgString = string1">
+          <div class="square shift1">
+            <div class="shift2">
+              <div class="shift3">
+              <img src="/assets/optimized_nearest_neighbor_with_2op.gif" alt="Traveling Saleman Problem"         style="opacity: .7;"
+              />
+
+              </div>
+            </div>
+          </div>
+        </span>
+      </div>
+      <p>{{ content[choice] }}</p>
+      <div *ngIf="choice === 2" class="onlyconnect">
+        <div class="box-container">
+          <img src="/assets/onlyConnectOriginal.jpg" alt="Only Connect" />
+          <div class="text-container">
+            <p>Original Game</p>
+            </div>
+        </div>
+        <div class="box-container">
+          <img src="/assets/onlyConnectRecreation.jpg" alt="Only Connect" />
+          <div class="text-container">
+            <p>Duplicate Version</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="global-button">
+      <a
+        href="https://github.com/NickHagopianZ/Senior-Project"
+        *ngIf="choice === 0"
+        >Link to Project</a
+      >
+      <a
+        href="https://github.com/NickHagopianZ/Junior-Project"
+        *ngIf="choice === 1"
+        >Link to Project</a
+      >
+      <a href="https://onlyconnecttry.firebaseapp.com/" *ngIf="choice === 2"
+        >Link to Project</a
+      >
+    </div>
+  </article>
+
+  <section class="project-chooser">
+    <li
+      *ngFor="let val of title; let i = index"
+      (click)="choose(i)"
+      [ngClass]="{ 'active': i === choice }"
+    >
+      <h2>{{ title[i] }}</h2>
+      <img
+        *ngIf="i === 0"
+        src="/assets/nphard.png"
+        alt="Nurse Scheduling Problem"
+        height="100%"
+      />
+      <img
+        *ngIf="i === 1"
+        src="/assets/optimized_nearest_neighbor_with_2op.gif"
+        alt="Traveling Saleman Problem"
+        height="100%"
+        style="opacity: .7;"
+      />
+      <img
+        *ngIf="i === 2"
+        src="/assets/onlyConnectRecreation.jpg"
+        alt="Only Connect"
+        height="100%"
+      />
+    </li>
+  </section>
+</div>
+
+
+<div *ngIf="imgBoolean" class="img-cover" (click)="imgBoolean = false"></div>
+
+<app-img-viewer *ngIf="imgBoolean" [download]="false" [img]="imgString"></app-img-viewer>

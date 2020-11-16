@@ -1,0 +1,137 @@
+<div class="home-cover">
+  <!-- <div class="scroll-cover"> -->
+    <div class="flex-item">
+    <h2>Experience</h2>
+    <div class="experience">
+      <h3>Software Engineer Intern</h3>
+      <span class="time">May 2020 – Present</span>
+      <span class="location">TDS Telecom | Middleton, Wisconsin </span>
+      <ul>
+          <li>
+            Worked on the DevOps team to provide custom CI/CD with software such as Jenkins and Ansible
+          </li>
+          <li>
+            Grew under mentorship from senior individuals, continuously gaining skills and taking on further responsibilities
+          </li>
+          <li>
+            Took the initiative to regularly improve documentation of software and practices with the goal of creating lasting team knowledge 
+          </li>
+          <li>
+            Utilized Jira for project management and issue tracking
+          </li> 
+          <li>
+            Contributed to issue evaluation during daily standups and weekly meetings
+          </li>
+      </ul>
+      <h3>Data Analyst Intern </h3>
+      <span class="time">Jan 2019 – Feb 2019</span>
+      <span class="location">Mer Software | Yerevan, Armenia </span>
+      <ul>
+          <li>
+            Evaluated the usefulness of data models for clients and possible methods for their implementation
+          </li>
+          <li>
+            Became a trusted team member who actively discussed and contributed to project goals alongside team leaders
+          </li>
+          <li>
+            Discovered and presented new ways to gather customer data
+          </li>
+          <li>
+            Worked in Angular 6 to develop lightweight, expressive and responsive prototypes of analytical models
+          </li>
+      </ul>
+
+      <h3>Software Developer Intern  </h3>
+      <span class="time">Nov 2018 – Dec 2018</span>
+      <span class="location">Annaniks | Gyumri, Armenia </span>
+      <ul>
+          <li>
+            Used TypeScript, HTML5 and CSS to develop Angular 6 and 7 components
+          </li>
+          <li>
+            Made AuthGuard protected API requests within Angular components
+          </li>
+          <li>
+            Gained experience in reactive programming
+          </li>
+      </ul>
+
+      <h3>Technologies Writer Intern   </h3>
+      <span class="time">Nov 2018 – Dec 2018</span>
+      <span class="location">gHost LLC | Gyumri, Armenia </span>
+      <ul>
+          <li>
+            Researched technologies innovations in the field of eCommerce to produced analytical papers
+          </li>
+      </ul>
+
+      <h3>Wait Staff    </h3>
+      <span class="time">May 2019 – March 2020</span>
+      <span class="location">Pizza House | Ann Arbor, MI </span>
+      <ul>
+          <li>
+            Managed a considerable number of tasks with comfort and precision
+          </li>
+          <li>
+            Quickly became a reliable and competent member of the staff
+          </li>
+          </ul>
+
+    </div>
+    </div>
+    <div class="flex-item">
+    <h2>
+      Skills
+    </h2>
+    <ul>
+      <li *ngFor="let skill of skills; let i = index">
+        {{ skill[1] }}
+        <div class="star-container">
+          <span
+            *ngFor="let dummy of ' '.repeat(skill[0]).split(''); let x = index"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
+              />
+            </svg>
+          </span>
+          <span
+            *ngFor="
+              let dummy of ' '.repeat(5 - skill[0]).split('');
+              let x = index
+            "
+            class="hide"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
+              />
+            </svg>
+          </span>
+        </div>
+      </li>
+    </ul>
+    <div class="box">
+      <div class="global-button">
+        <a (click)="imgBoolean = true">
+          View Resume
+        </a>
+      </div>
+    </div>
+    </div>
+  <!-- </div> -->
+</div>
+<div *ngIf="imgBoolean" class="img-cover" (click)="imgBoolean = false"></div>
+
+<app-img-viewer *ngIf="imgBoolean" [download]= "true" [img]="imgString"></app-img-viewer>
