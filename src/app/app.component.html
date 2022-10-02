@@ -1,9 +1,23 @@
-<!-- Toolbar -->
+<!DOCTYPE html>
+<meta name='viewport' content='initial-scale=1, height=device-height, viewport-fit=auto'>
+<html lang="en">
+<head>
+  <!-- <meta charset="UTF-8"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>Nick Hagopian-Zirkel</title>
+</head>
 <body>
-  <div id="container">
 
-  <app-nav-bar></app-nav-bar>
-  <!-- <div class="content" role="main"></div> -->
-  <!-- <router-outlet></router-outlet> -->
+  <div id="cover" >
+
+    <app-navbar [scrollLocation]='scrollLocation' [pageHeight]='pageHeight'></app-navbar>
+    <div id="scroll-container" (scroll)="adjustScrollLocation()">
+        <section id = "page-1"><app-home></app-home></section>
+        <section id = "page-2"><app-qualifications></app-qualifications> </section>
+        <section id = "page-3"><app-projects></app-projects></section>
+        <!-- <section id = "page-4"><app-hobbies></app-hobbies></section> -->
+    </div>
   </div>
+
 </body>
+</html>
